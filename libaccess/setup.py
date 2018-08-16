@@ -1,4 +1,4 @@
-from setuptools import setup
+from setuptools import setup, find_packages
 
 setup(name='libaccess',
       version='1.0',
@@ -6,7 +6,7 @@ setup(name='libaccess',
       url='https://github.com/rdsaylor-noaa/libaccess',
       author='Rick Saylor',
       author_email='rdsaylor@gmail.com',
-      packages=['libaccess'],
+      packages=find_packages(),
       install_requires=[
           'seaborn',
           'matplotlib',
