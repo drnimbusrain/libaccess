@@ -99,6 +99,29 @@ def timekeys(simname):
 
     return dts, hrs
 
+def getspunits(simname):
+    """Reads species units key file which defines species output as ppbv
+
+    Args:
+       simname (str)            : ACCESS simulation name
+
+    Returns:
+       ppbvs (list of str)      : species strings output as ppbv
+    """
+    # read species units key file
+    fnsp = os.getcwd()+"/"+simname+"/ACCESS_ppbv.dat"
+    fhsp = open(fnsp)
+    lines = fhsp.readlines()
+    fhsp.close()
+    lines = lines[1:]          # ignore the header line
+   
+    pppbs = []
+    for line in lines:
+        data = line.split()
+        ppbvs.append(data[1])
+
+    return ppbvs
+
 def get1Dvar(simname, dirname, varname):
     """Reads a height-time output file from an ACCESS simulation and
        returns the data
