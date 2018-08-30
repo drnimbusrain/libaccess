@@ -83,18 +83,19 @@ def plotprofs(simname, dirname, rxnnum, outtype, intdt, zmax, xmax, hc):
         ahc = [hc, hc]
         xbnds = list(ax.get_xlim())
         plt.plot(xbnds, ahc, color='0.25', linestyle='--', linewidth=lnwdth)
+        plt.xlim(xbnds[0], xbnds[1])
 
     # set labels and title
     if (dirname == "rates"):
-        varunits = "(molec cm$^{-3}$ s$^{-1}$)"
-        vartitle = "Rxn Rate: "+str(rxnnum) 
+        varunits = "molec cm$^{-3}$ s$^{-1}$"
+        vartitle = "Rxn Rate: #"+str(rxnnum) 
         outfn = "rates"
     else:
-        varunits = "(molec-cm-s units)"
-        vartitle = "Rate Coef: "+str(rxnnum) 
+        varunits = "molec-cm-s units"
+        vartitle = "Rate Coef: #"+str(rxnnum) 
         outfn = "ks"
 
-    plt.xlabel(spcname+"-"+varunits, fontsize=xfsize, labelpad=xlabpad)
+    plt.xlabel(varunits, fontsize=xfsize, labelpad=xlabpad)
     plt.ylabel("z (m)", fontsize=yfsize, labelpad=ylabpad)
     plt.title(vartitle+" - "+simname, fontsize=tfsize, y=tyloc)
 

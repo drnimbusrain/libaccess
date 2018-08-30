@@ -85,9 +85,10 @@ def plotprofs(simname, dirname, spcname, varunits, vartitle, outtype, outfn, int
         ahc = [hc, hc]
         xbnds = list(ax.get_xlim())
         plt.plot(xbnds, ahc, color='0.25', linestyle='--', linewidth=lnwdth)
+        plt.xlim(xbnds[0], xbnds[1])
 
     # set labels and title
-    plt.xlabel(spcname+"-"+varunits, fontsize=xfsize, labelpad=xlabpad)
+    plt.xlabel(varunits, fontsize=xfsize, labelpad=xlabpad)
     plt.ylabel("z (m)", fontsize=yfsize, labelpad=ylabpad)
     plt.title(vartitle+" - "+simname, fontsize=tfsize, y=tyloc)
 

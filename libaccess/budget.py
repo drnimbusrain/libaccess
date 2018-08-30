@@ -57,7 +57,7 @@ def plotprofs(simname, spcname, varunits, outtype, outfn, itime, zmax, xmax, hc)
     dirname = "budget"
 
     # constrained
-    z, bad = get1Dvar(simname, dirname, spcname+"_bad")
+    z, bad = get1Dvar(simname, dirname, spcname+"_bcn")
 
     # chemistry
     z, bch = get1Dvar(simname, dirname, spcname+"_bch")
@@ -96,11 +96,12 @@ def plotprofs(simname, spcname, varunits, outtype, outfn, itime, zmax, xmax, hc)
         ahc = [hc, hc]
         xbnds = list(ax.get_xlim())
         plt.plot(xbnds, ahc, color='0.25', linestyle='--', linewidth=lnwdth)
+        plt.xlim(xbnds[0], xbnds[1])
 
     # set labels and title
-    plt.xlabel(spcname+"-"+varunits, fontsize=xfsize, labelpad=xlabpad)
+    plt.xlabel(varunits, fontsize=xfsize, labelpad=xlabpad)
     plt.ylabel("z (m)", fontsize=yfsize, labelpad=ylabpad)
-    plt.title(simname+" - "+hrs[itime], fontsize=tfsize, y=tyloc)
+    plt.title(spcname+"-"+simname+"-"+hrs[itime]+"LT", fontsize=tfsize, y=tyloc)
 
     # set standard formatting
     setstdfmts(ax, tlmaj, tlmin, tlbsize, tlbpad)

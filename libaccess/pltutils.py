@@ -115,7 +115,7 @@ def getspunits(simname):
     fhsp.close()
     lines = lines[1:]          # ignore the header line
    
-    pppbs = []
+    ppbvs = []
     for line in lines:
         data = line.split()
         ppbvs.append(data[1])
