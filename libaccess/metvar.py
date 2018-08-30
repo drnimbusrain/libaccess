@@ -56,9 +56,9 @@ def plotprofs(simname, varname, outtype, intdt, hmax, hc):
         varunits = "molecules cm$^{-3}$"
         vartitle = "Air Density"
 
-    elif(varname == "h2o"):
-        varunits = "molecules cm$^{-3}$"
-        vartitle = "Water Vapor Concentration"
+    elif(varname == "rh"):
+        varunits = "%"
+        vartitle = "Relative Humidity"
 
     elif(varname == "kv"):
         varunits = "cm$^{2}$ s$^{-1}$"
