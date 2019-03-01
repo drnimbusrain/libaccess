@@ -98,7 +98,7 @@ def plottsm(simname, dirname, varnames, varlabels, varunits, plttitle, plttype, 
 
     # add legend
     if (len(varnames) > 1):
-        plt.legend(loc=4, fontsize=lfszlg, bbox_to_anchor=(0.99, 0.70))
+        plt.legend(loc=4, fontsize=lfszlg, bbox_to_anchor=(0.99, 0.65))
 
     # create output
     pltoutput(simname, outfn, outtype)
